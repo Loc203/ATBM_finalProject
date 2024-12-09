@@ -1,16 +1,20 @@
 package model;
 
-import org.jdbi.v3.core.mapper.reflect.ColumnName;
-
 public class Order {
-    @ColumnName("order_id")
     int id;
-    @ColumnName("account_id")
     int account_id;
+
+    String key;
 
     public Order(int id, int account_id) {
         this.id = id;
         this.account_id = account_id;
+    }
+
+    public Order(int id, int account_id, String key) {
+        this.id = id;
+        this.account_id = account_id;
+        this.key = key;
     }
 
     public Order() {
@@ -30,6 +34,14 @@ public class Order {
 
     public void setAccount_id(int account_id) {
         this.account_id = account_id;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     @Override
